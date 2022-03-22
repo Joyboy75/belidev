@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Front;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,10 +19,10 @@ class ClientController extends AbstractController
     }
 
     /**
-     * @Route("/home", name="home")
+     * @Route("/accueil", name="accueil")
      */
-     function home(): Response
+     function accueil(): Response
     {
-        return $this->render('/home.html.twig');
+        return $this->render('front/accueil.html.twig');
     }
 }
