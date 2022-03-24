@@ -33,9 +33,10 @@ class Demande
     private $information_client;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Ged::class, inversedBy="demandes")
      */
     private $ged;
+
 
     public function getId(): ?int
     {
@@ -78,15 +79,16 @@ class Demande
         return $this;
     }
 
-    public function getGed(): ?string
+    public function getGed(): ?Ged
     {
         return $this->ged;
     }
 
-    public function setGed(string $ged): self
+    public function setGed(?Ged $ged): self
     {
         $this->ged = $ged;
 
         return $this;
     }
+
 }

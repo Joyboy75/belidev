@@ -17,10 +17,7 @@ class Client
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $raison_sociale;
+    
 
     /**
      * @ORM\Column(type="integer")
@@ -43,26 +40,22 @@ class Client
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Ged::class, inversedBy="clients")
      */
     private $ged;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $raisonsociale;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getRaisonSociale(): ?string
-    {
-        return $this->raison_sociale;
-    }
-
-    public function setRaisonSociale(string $raison_sociale): self
-    {
-        $this->raison_sociale = $raison_sociale;
-
-        return $this;
-    }
+    
 
     public function getSiret(): ?int
     {
@@ -112,15 +105,29 @@ class Client
         return $this;
     }
 
-    public function getGed(): ?string
+    public function getGed(): ?Ged
     {
         return $this->ged;
     }
 
-    public function setGed(string $ged): self
+    public function setGed(?Ged $ged): self
     {
         $this->ged = $ged;
 
         return $this;
     }
+
+    public function getRaisonsociale(): ?string
+    {
+        return $this->raisonsociale;
+    }
+
+    public function setRaisonsociale(string $raisonsociale): self
+    {
+        $this->raisonsociale = $raisonsociale;
+
+        return $this;
+    }
+
+    
 }
