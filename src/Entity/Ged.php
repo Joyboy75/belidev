@@ -29,20 +29,21 @@ class Ged
      */
     private $type;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Client::class, mappedBy="ged")
-     */
-    private $clients;
-
+    
     /**
      * @ORM\OneToMany(targetEntity=Demande::class, mappedBy="ged")
      */
     private $demandes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="geds")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
+
     public function __construct()
     {
-        $this->clients = new ArrayCollection();
-        $this->demandes = new ArrayCollection();
+                $this->demandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -74,36 +75,7 @@ class Ged
         return $this;
     }
 
-    /**
-     * @return Collection<int, Client>
-     */
-    public function getClients(): Collection
-    {
-        return $this->clients;
-    }
-
-    public function addClient(Client $client): self
-    {
-        if (!$this->clients->contains($client)) {
-            $this->clients[] = $client;
-            $client->setGed($this);
-        }
-
-        return $this;
-    }
-
-    public function removeClient(Client $client): self
-    {
-        if ($this->clients->removeElement($client)) {
-            // set the owning side to null (unless already changed)
-            if ($client->getGed() === $this) {
-                $client->setGed(null);
-            }
-        }
-
-        return $this;
-    }
-
+    
     /**
      * @return Collection<int, Demande>
      */
@@ -130,6 +102,18 @@ class Ged
                 $demande->setGed(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }

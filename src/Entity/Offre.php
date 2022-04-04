@@ -66,12 +66,12 @@ class Offre
         return $this;
     }
 
-    public function getListeAvantages(): ?string
+    public function getliste_avantages(): ?string
     {
         return $this->liste_avantages;
     }
 
-    public function setListeAvantages(string $liste_avantages): self
+    public function setliste_avantages(string $liste_avantages): self
     {
         $this->liste_avantages = $liste_avantages;
 

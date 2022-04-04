@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffec03e57a1cd0efbdccdbfd73184e55",
+    "content-hash": "bc646d5cca7738eaf9a4393f9a8be123",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1578,6 +1578,64 @@
                 }
             ],
             "time": "2021-12-19T18:06:55+00:00"
+        },
+        {
+            "name": "manuxi/google-reviews-bundle",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/manuxi/google-reviews-bundle.git",
+                "reference": "ee5d51fd2f33fb5432300faef0174a3b22844610"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/manuxi/google-reviews-bundle/zipball/ee5d51fd2f33fb5432300faef0174a3b22844610",
+                "reference": "ee5d51fd2f33fb5432300faef0174a3b22844610",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": "^7.1|^8.0",
+                "symfony/cache": "^4.0 || ^5.0",
+                "symfony/config": "^4.0 || ^5.0",
+                "symfony/dependency-injection": "^4.0 || ^5.0",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "symfony/http-kernel": "^4.0 || ^5.0",
+                "symfony/monolog-bundle": "^3.6",
+                "symfony/property-access": "^4.0 || ^5.0",
+                "symfony/serializer": "^4.0 || ^5.0",
+                "symfony/twig-bundle": "^4.0 || ^5.0",
+                "symfony/yaml": "^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "jangregor/phpstan-prophecy": "^0.8",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+                "symfony/debug-bundle": "^4.0 || ^5.0",
+                "symfony/phpunit-bridge": "^4.0 || ^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Manuxi\\GoogleReviewsBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "manuxi",
+                    "email": "manu@bytefresser.de"
+                }
+            ],
+            "description": "Bundle to get Google reviews easily",
+            "support": {
+                "issues": "https://github.com/manuxi/google-reviews-bundle/issues",
+                "source": "https://github.com/manuxi/google-reviews-bundle/tree/v1.0.0"
+            },
+            "time": "2021-03-24T02:46:01+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4171,16 +4229,16 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v5.4.5",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "f6e927ec95c957131e6b2c78790e1a6d4c576447"
+                "reference": "03332035eef89557db9eb7ead4e899685d5962b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/f6e927ec95c957131e6b2c78790e1a6d4c576447",
-                "reference": "f6e927ec95c957131e6b2c78790e1a6d4c576447",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/03332035eef89557db9eb7ead4e899685d5962b9",
+                "reference": "03332035eef89557db9eb7ead4e899685d5962b9",
                 "shasum": ""
             },
             "require": {
@@ -4227,7 +4285,7 @@
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/mailer/tree/v5.4.5"
+                "source": "https://github.com/symfony/mailer/tree/v5.4.7"
             },
             "funding": [
                 {
@@ -4243,7 +4301,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-25T10:48:33+00:00"
+            "time": "2022-03-18T16:00:30+00:00"
         },
         {
             "name": "symfony/mime",

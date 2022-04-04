@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ClientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,15 +41,21 @@ class Client
      */
     private $ville;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Ged::class, inversedBy="clients")
-     */
-    private $ged;
-
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $raisonsociale;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Ged::class, mappedBy="client")
+     */
+    private $geds;
+
+    public function __construct()
+    {
+        $this->geds = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -105,17 +113,7 @@ class Client
         return $this;
     }
 
-    public function getGed(): ?Ged
-    {
-        return $this->ged;
-    }
-
-    public function setGed(?Ged $ged): self
-    {
-        $this->ged = $ged;
-
-        return $this;
-    }
+   
 
     public function getRaisonsociale(): ?string
     {
@@ -125,6 +123,36 @@ class Client
     public function setRaisonsociale(string $raisonsociale): self
     {
         $this->raisonsociale = $raisonsociale;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ged>
+     */
+    public function getGeds(): Collection
+    {
+        return $this->geds;
+    }
+
+    public function addGed(Ged $ged): self
+    {
+        if (!$this->geds->contains($ged)) {
+            $this->geds[] = $ged;
+            $ged->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGed(Ged $ged): self
+    {
+        if ($this->geds->removeElement($ged)) {
+            // set the owning side to null (unless already changed)
+            if ($ged->getClient() === $this) {
+                $ged->setClient(null);
+            }
+        }
 
         return $this;
     }

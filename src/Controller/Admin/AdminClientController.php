@@ -60,11 +60,11 @@ class AdminClientController extends AbstractController {
 
         }
         
-        return $this->render('admin/clientform.html.twig', ['clientform' => $clientForm->createView()]);
+        return $this->render('admin/clientform.html.twig', ['clientForm' => $clientForm->createView()]);
         
     }
 
-    //Modification d'un élément de la table client grâce à son id
+    //Mise à jour d'un client grâce à son id
     /**
      *@Route("admin/update/client/{id}", name="admin_update_client")
      */
@@ -93,10 +93,10 @@ class AdminClientController extends AbstractController {
             // flush enregistre dans la bdd
             $entityManagerInterface->flush();
 
-            $this->addFlash(
-                'notice',
-                'Le client a bien été modifié !'
-            );
+            // $this->addFlash(
+            //     'notice',
+            //     'Le client a bien été modifié !'
+            // );
 
             return $this->redirectToRoute('admin_client_list');
         }
@@ -121,10 +121,10 @@ class AdminClientController extends AbstractController {
         $entityManagerInterface->remove($client);
         $entityManagerInterface->flush();
 
-        $this->addFlash(
-            'notice',
-            'Votre client a bien été supprimé'
-        );
+        // $this->addFlash(
+        //     'notice',
+        //     'Votre client a bien été supprimé'
+        // );
 
         return $this->redirectToRoute('admin_client_list');
     }

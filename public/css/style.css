@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Urbanist:wght@500;800&display=swap");
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+*,
+body,
+::after,
+::before {
+  font-family: Roboto;
+}
 /* FORM */
 .form-control {
   display: block;
@@ -32,4 +42,242 @@
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+a.stylebouton {
+  -webkit-border-radius: 1px;
+
+  -moz-border-radius: 1px;
+
+  border-radius: 5px;
+
+  border: solid thin #929292;
+
+  text-shadow: none;
+
+  background: #f6f6f6;
+
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #dddddd);
+
+  background-image: -moz-linear-gradient(top, #f6f6f6, #dddddd);
+
+  background-image: -ms-linear-gradient(top, #f6f6f6, #dddddd);
+
+  background-image: -o-linear-gradient(top, #f6f6f6, #dddddd);
+
+  background-image: linear-gradient(to bottom, #f6f6f6, #dddddd);
+
+  color: buttontext;
+
+  padding: 3px 8px;
+
+  margin: 2px;
+
+  text-decoration: none;
+
+  font-family: Arial;
+
+  font-size: 13.1999998092651px;
+}
+
+a.stylebouton:hover {
+  background-image: -webkit-linear-gradient(top, #dddddd, #f6f6f6);
+
+  background-image: -moz-linear-gradient(top, #dddddd, #f6f6f6);
+
+  background-image: -ms-linear-gradient(top, #dddddd, #f6f6f6);
+
+  background-image: -o-linear-gradient(top, #dddddd, #f6f6f6, #dddddd);
+
+  background-image: linear-gradient(to bottom, #dddddd, #f6f6f6);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/** OFFERS */
+
+.offers .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.offers .container .offer {
+  display: flex;
+  margin-bottom: 20px;
+  height: 500px;
+  width: 280px;
+  background: #c8eeff;
+  padding: 50px;
+  border: 1px solid #1c364d;
+  border-radius: 10px;
+  box-shadow: 6px 6px #dae4c7;
+  box-shadow: black;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.offers .container .offer p {
+  font-size: 17px;
+}
+
+.offers .container .offer h4 {
+  margin-top: 20px;
+}
+
+.offers .container .offer a {
+  margin-top: 4px;
+  border-radius: 5px;
+  color: #fff;
+  background: #ed145b;
+  padding: 15px 35px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 60px;
+}
+
+.offerr.title {
+  margin-bottom: 49px;
+}
+/* .offerr.description {
+  margin-bottom: 49px;
+}
+.offerr.avantage {
+  margin-bottom: 49px;
+} */
+
+@media screen and (max-width: 822px) {
+  .offers .container {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .offers .container .offer {
+    display: inline-table;
+    margin-bottom: 20px;
+    height: 300px;
+    width: 180px;
+    background: #c8eeff;
+    padding: 52px;
+    border: 1px solid #1c364d;
+    border-radius: 10px;
+    box-shadow: 6px 6px #dae4c7;
+    box-shadow: black;
+  }
+  .offers .container .offer p {
+    font-size: 20px;
+  }
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 4rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+
+.bg--neutral-light {
+  background-color: #efefef;
+}
+.section {
+  padding: 3.5rem 0.938rem;
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+.featurette-h1 {
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 60px;
+}
+
+/* MEDIA QUERIES
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
 }

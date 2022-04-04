@@ -20,10 +20,10 @@ class ClientType extends AbstractType
             ->add('adresse')
             ->add('cp')
             ->add('ville')
-            ->add('ged', EntityType::class, [
-                'class' => Ged::class,
-                'choice_label' => 'nom'            
-            ])
+            // ->add('ged', EntityType::class, [
+            //     'class' => Ged::class,
+            //     'choice_label' => 'nom'            
+            // ])
             ->add('Enregistrer', SubmitType::class)
         ;
     }

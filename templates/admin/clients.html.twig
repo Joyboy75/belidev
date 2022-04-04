@@ -17,7 +17,8 @@
 					<th scope="col">Adresse</th>
 					<th scope="col">CP</th>
 					<th scope="col">Ville</th>
-					<th scope="col">Ged</th>
+					{# <th scope="col">Ged</th> #}
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,9 +37,18 @@
 				<td>{{client.adresse}}</td>
 				<td>{{client.cp}}</td>
 				<td>{{client.ville}}</td>
-				<td>{{client.ged}}</td>
+				{# <td>{{client.ged}}</td> #}
+				<td>
+					<a class="stylebouton" href="{{path('admin_update_client', {'id' : client.id}) }}">Modifier</a>
+
+					<a class="stylebouton" href="{{path('admin_delete_client', {'id' : client.id}) }}">Supprimer</a>
+
+
+				</td>
 			</tbody>
 		</tr>
 
 	{% endfor %}
-</tbody></table></div>{% endblock %}
+
+
+</tbody></table></div><a class="stylebouton mt-4 ms-4 me-4" href="{{path('admin_create_client')}}">Ajouter client</a>{% endblock %}

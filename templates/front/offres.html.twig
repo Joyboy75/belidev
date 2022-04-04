@@ -1,0 +1,31 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	<div class="offers">
+		<div class="container ">
+			{% for offre in offres %}
+				<div class="offer">
+
+					<div class="offerr title">
+						<h4>{{offre.titre}}</h4>
+					</div>
+
+					<div class="offerr description">
+						<p>{{offre.description}}</p>
+					</div>
+
+					<div class="offerr avantage">
+						<p>{{offre.liste_avantages}}</p>
+					</div>
+
+
+					<a href="#">Choisir</a>
+
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+{% endblock %}
