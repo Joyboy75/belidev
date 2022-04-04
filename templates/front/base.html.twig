@@ -34,6 +34,25 @@
 							</li>
 
 						</ul>
+
+						{% if  app.user %}
+
+
+							<a class="mb-1 me-1 " href="{{path('app_logout')}}">Se déconnecter</a>
+							<a class="mb-1 me-1 " href="{{path('app_login')}}">Mon compte</a>
+
+
+						{% endif %}
+
+						{# <a href="{{path("show_cart")}}">
+													<i class="bi bi-cart2" style="font-size: 2rem; color: cornflowerblue;"></i>
+												</a> #}
+
+						{% if not app.user %}
+							<a class="mb-1 me-1" href="{{path('app_login')}}">Se connecter</a>
+							<a class=" mb-1 me-1" href="{{path('app_register')}}">S'inscrire</a>
+						{% endif %}
+
 						<form class="d-flex">
 							<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 							<button class="btn btn-outline-success" type="submit">Search</button>

@@ -2,6 +2,7 @@
 
 namespace App\Security;
 
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,10 +49,11 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
-
+              
         // For example:
         return new RedirectResponse($this->urlGenerator->generate('admin_client_list'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        
     }
 
     protected function getLoginUrl(Request $request): string
