@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DemandeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,10 +24,6 @@ class Demande
      */
     private $statut;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $offre;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -36,6 +34,16 @@ class Demande
      * @ORM\ManyToOne(targetEntity=Ged::class, inversedBy="demandes")
      */
     private $ged;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Offre::class, mappedBy="demande")
+     */
+    private $offre;
+
+    public function __construct()
+    {
+        $this->offre = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -55,17 +63,7 @@ class Demande
         return $this;
     }
 
-    public function getOffre(): ?string
-    {
-        return $this->offre;
-    }
-
-    public function setOffre(string $offre): self
-    {
-        $this->offre = $offre;
-
-        return $this;
-    }
+    
 
     public function getInformationClient(): ?string
     {
@@ -87,6 +85,36 @@ class Demande
     public function setGed(?Ged $ged): self
     {
         $this->ged = $ged;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Offre>
+     */
+    public function getOffre(): Collection
+    {
+        return $this->offre;
+    }
+
+    public function addOffre(Offre $offre): self
+    {
+        if (!$this->offre->contains($offre)) {
+            $this->offre[] = $offre;
+            $offre->setDemande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOffre(Offre $offre): self
+    {
+        if ($this->offre->removeElement($offre)) {
+            // set the owning side to null (unless already changed)
+            if ($offre->getDemande() === $this) {
+                $offre->setDemande(null);
+            }
+        }
 
         return $this;
     }

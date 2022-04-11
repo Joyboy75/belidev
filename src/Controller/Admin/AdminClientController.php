@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Client;
 use App\Form\ClientType;
 use App\Repository\ClientRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,12 +18,13 @@ class AdminClientController extends AbstractController {
     /**
      * @Route("admin/clients", name="admin_client_list")
      */
-    public function adminClientList(ClientRepository $clientRepository)
+    public function adminClientList(ClientRepository $clientRepository, UserRepository $userRepository)
     {
+        $users = $userRepository->findAll();
 
         $clients = $clientRepository->findAll();
 
-        return $this->render("admin/clients.html.twig", ['clients' => $clients]);
+        return $this->render("admin/clients.html.twig", ['clients' => $clients, 'users' => $users]);
     }
 
     //Récupération d'un élément de la table Client

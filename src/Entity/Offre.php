@@ -37,6 +37,11 @@ class Offre
      */
     private $prix;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Demande::class, inversedBy="offre")
+     */
+    private $demande;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Offre
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getDemande(): ?Demande
+    {
+        return $this->demande;
+    }
+
+    public function setDemande(?Demande $demande): self
+    {
+        $this->demande = $demande;
 
         return $this;
     }

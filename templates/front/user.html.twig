@@ -1,0 +1,15 @@
+{% extends "front/base.html.twig" %}
+
+<div class="card-body">
+	<div class="card-body style=" height: 70px"">
+		<h1>Mail :
+			{{user.name}}</h1>
+		<h2>Prix :
+			{{user.password}}
+		</h2>
+
+		<br>
+
+		<a href="{{path('product_list')}}" class="btn btn-primary mt-2">Retourner aux products</a>
+	</div>
+</div>

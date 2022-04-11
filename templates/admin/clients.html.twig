@@ -1,11 +1,12 @@
 {% extends "admin/base.html.twig" %}
 
+
 {% block main %}
 	<div class="d-flex mt-4 ms-4 me-4">
 
 		<table class="table table-hover caption-top table-responsive">
 			<caption>
-				Clients
+				<h1>Clients</h1>
 			</caption>
 
 
@@ -17,8 +18,8 @@
 					<th scope="col">Adresse</th>
 					<th scope="col">CP</th>
 					<th scope="col">Ville</th>
-					{# <th scope="col">Ged</th> #}
-					<th scope="col"></th>
+					<th scope="col">Fichier(s)</th>
+					<th scope="col">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -37,13 +38,21 @@
 				<td>{{client.adresse}}</td>
 				<td>{{client.cp}}</td>
 				<td>{{client.ville}}</td>
-				{# <td>{{client.ged}}</td> #}
 				<td>
-					<a class="stylebouton" href="{{path('admin_update_client', {'id' : client.id}) }}">Modifier</a>
+					{% for ged in client.geds %}
+						{{ged.nom}}
 
-					<a class="stylebouton" href="{{path('admin_delete_client', {'id' : client.id}) }}">Supprimer</a>
+					{% endfor %}
+				</td>
+				<td>
+					<a class=" me-4" href="{{path( 'admin_update_client', {'id' : client.id})}}">
+						<i style="font-size: 1.5rem" class="bi bi-pen-fill pulse"></i>
 
+					</a>
+					<a href="{{ path( 'admin_delete_client', {'id' : client.id})}}">
+						<i style="color:red; font-size: 1.5rem" class="bi bi-trash-fill pulse"></i>
 
+					</a>
 				</td>
 			</tbody>
 		</tr>
@@ -51,4 +60,50 @@
 	{% endfor %}
 
 
-</tbody></table></div><a class="stylebouton mt-4 ms-4 me-4" href="{{path('admin_create_client')}}">Ajouter client</a>{% endblock %}
+</tbody></table></div><a class=" mt-4 ms-4 me-4" href="{{path('admin_create_client')}}"><i style="color: green; font-size: 2rem;" class="bi bi-plus-circle-fill"></i></a><div class="row"><div class="col s12 m-t-30">
+
+
+<div class="d-flex mt-4 ms-4 me-4">
+
+	<table class="table table-hover caption-top table-responsive">
+		<caption>
+			<h1>Utilisateurs</h1>
+		</caption>
+
+		<thead class="table-primary">
+
+			<tr>
+				<th>#</th>
+				<th>Adresse email</th>
+				<th>Roles</th>
+				<th>Actions</th>
+			</tr>
+
+		</thead>
+		{% set i = 1 %}
+		{% for user in users %}
+			<tr class="table-info"></tr>
+
+			<td>{{ i }}</td>
+			<td>{{ user.email }}</td>
+			<td>
+				{% for role in user.roles %}
+					{{role}}
+
+				{% endfor %}
+			</td>
+			<td>
+				<a class=" me-4" href="#">
+					<i style="font-size: 1.5rem" class="bi bi-pen-fill pulse"></i>
+
+				</a>
+
+				<a href="#">
+					<i style="color:red; font-size: 1.5rem" class="bi bi-trash-fill pulse"></i>
+
+				</a>
+			</td>
+		</tr>
+		{% set i = i+1 %}
+	{% endfor %}
+</table></div>{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	{# <section id="marzen" class="tab-panel">
+			<div role="form" class="wpcf7" id="wpcf7-f4312-o1" lang="fr-FR" dir="ltr">
+				<div class="screen-reader-response">
+					<p role="status" aria-live="polite" aria-atomic="true"></p>
+					<ul></ul>
+				</div>
+				<form action="/contact/#wpcf7-f4312-o1" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+					<div style="display: none;">
+						<input type="hidden" name="_wpcf7" value="4312">
+						<input type="hidden" name="_wpcf7_version" value="5.5.6">
+						<input type="hidden" name="_wpcf7_locale" value="fr_FR">
+						<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4312-o1">
+						<input type="hidden" name="_wpcf7_container_post" value="0">
+						<input type="hidden" name="_wpcf7_posted_data_hash" value="">
+					</div>
+					<h2>Vous souhaitez être mis en relation avec<br>
+						nos experts ?</h2>
+					<div class="row_full">
+						<div class="form-group select">
+							<label>
+								Type de projet*
+							</label><br>
+							<span class="wpcf7-form-control-wrap typeprojet">
+								<select name="typeprojet" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false">
+									<option value="">Type de projet:</option>
+									<option value="Vitrine">Vitrine</option>
+									<option value="E-commerce">E-commerce</option>
+									<option value="Application">Application</option>
+									<option value="UX/UI design">UX/UI design</option>
+									<option value="ERP/CRM">ERP/CRM</option>
+									<option value="SEO">SEO</option>
+								</select>
+							</span>
+						</div>
+					</div>
+					<div class="row_full">
+						<div class="form-group">
+							<label>
+								Nom - Prénom - Raison sociale*
+							</label><br>
+							<span class="wpcf7-form-control-wrap nom"><input type="text" name="nom" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Nom - Prénom - Raison sociale"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<label>
+								Email*
+							</label><br>
+							<span class="wpcf7-form-control-wrap email_experts"><input type="email" name="email_experts" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email"></span>
+						</div>
+						<div class="form-group">
+							<label>
+								Téléphone*
+							</label><br>
+							<span class="wpcf7-form-control-wrap tel"><input type="tel" name="tel" value="" size="40" minlength="10" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Tel"></span>
+						</div>
+					</div>
+					<div class="row_full">
+						<label>
+							Ville
+						</label>
+						<p></p>
+						<div class="form-group">
+							<span class="wpcf7-form-control-wrap ville"><input type="text" name="ville" value="" size="40" class="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Ville"></span>
+						</div>
+					</div>
+					<div class="row_full">
+						<div class="form-group">
+							<label>
+								Message
+							</label><br>
+							<span class="wpcf7-form-control-wrap message">
+								<textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Votre message"></textarea>
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group budget select">
+							<label>
+								Budget*</label><br>
+							<span class="wpcf7-form-control-wrap budget">
+								<select name="budget" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false">
+									<option value="">Quel est votre budget:</option>
+									<option value="De 4 000 à 10 000 HT">De 4 000 à 10 000 HT</option>
+									<option value="De 11 000 à 18 000 HT">De 11 000 à 18 000 HT</option>
+									<option value="De 18 000 à 30 000 HT">De 18 000 à 30 000 HT</option>
+									<option value="De 30 000 à 60 000 HT">De 30 000 à 60 000 HT</option>
+									<option value="Au delà de 60 000 HT">Au delà de 60 000 HT</option>
+								</select>
+							</span>
+						</div>
+						<div class="form-group budget delais select">
+							<label>Délais*</label><br>
+							<span class="wpcf7-form-control-wrap delais">
+								<select name="delais" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false">
+									<option value="">Vos délais:</option>
+									<option value="Moins de 3 mois">Moins de 3 mois</option>
+									<option value="De 3 à 6 mois">De 3 à 6 mois</option>
+									<option value="Plus de 6 mois">Plus de 6 mois</option>
+									<option value="Le délai n'est pas important">Le délai n'est pas important</option>
+								</select>
+							</span>
+						</div>
+					</div>
+	
+	
+					<div class="form-group submit mt-3">
+						<input type="submit" value="Envoyer" class="wpcf7-form-control has-spinner wpcf7-submit main-btn grey-shadow"><span class="wpcf7-spinner"></span>
+					</div>
+					<div class="wpcf7-response-output" aria-hidden="true"></div>
+				</form>
+			</div>
+		</section> #}
+
+
+	<div
+		class="form-control">
+
+		{# {{form(simulationForm)}} #}
+
+		{{form_start(simulationForm,  {'attr' : {'class' : 'form'}})}}
+
+		{# création d'un label #}
+		{{ form_label(simulationForm.email, 'Email', {'label_attr' : {'class' : 'label'} } ) }}
+
+		{#création des champs avec form_widget#}
+		{{ form_widget(simulationForm.email, { 'attr' : {'placeholder' : 'Email', 'class' : 'title' } } )}}
+
+
+		{# création d'un label #}
+		{{ form_label(simulationForm.site, 'Type de site', {'label_attr' : {'class' : 'label'} } ) }}
+
+		{#création des champs avec form_widget#}
+		{{ form_widget(simulationForm.site, { 'attr' : {'placeholder' : 'Typre de site', 'class' : 'title' } } )}}
+
+		{{ form_label(simulationForm.bdd, 'Voulez-vous une base de donnée ?', {'label_attr' : {'class' : 'label'} } ) }}
+
+
+		{#création des champs avec form_widget#}
+		{{ form_widget(simulationForm.bdd, { 'attr' : {'placeholder' : 'Voulez-vous une base de donnée ?', 'class' : 'title' } } )}}
+
+
+		{{ form_label(simulationForm.api, 'Voulez-vous une api ?', {'label_attr' : {'class' : 'label'} } ) }}
+
+
+		{{ form_widget(simulationForm.api, {'attr' : {'placeholder' : 'Voulez-vous une api', 'class' : 'content' } } ) }}
+
+
+		{{ form_label(simulationForm.form, 'Voulez-vous intégrer un formulaire de contact ?', {'label_attr' : {'class' : 'label'} } ) }}
+
+
+		{{ form_widget(simulationForm.form, {'attr' : {'placeholder' : 'Voulez-vous intégrer un formulaire de contact ?', 'class' : 'content' } } ) }}
+
+
+		{{ form_label(simulationForm.user_management, 'Voulez-vous une gestion des utilisateurs avec connexion ?', {'label_attr' : {'class' : 'label'} } ) }}
+
+		{{ form_widget(simulationForm.user_management, {'attr' : {'placeholder' : 'Gestion des utilisateurs', 'class' : 'content' } } ) }}
+
+		{{form_widget(simulationForm.Enregistrer, {'attr' : {'class' : 'btn'}})}}
+
+		{{form_end(simulationForm)}}
+
+	</div>
+
+
+{% endblock %}

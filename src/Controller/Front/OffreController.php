@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Front;
 
 use App\Repository\OffreRepository;
 use Symfony\Component\HttpFoundation\Response;

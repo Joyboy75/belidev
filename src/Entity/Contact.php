@@ -42,6 +42,8 @@ class Contact
      */
     private $qualite;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;

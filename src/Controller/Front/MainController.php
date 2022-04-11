@@ -18,4 +18,11 @@ class MainController extends AbstractController
     }
 
 
+    /**
+     * @Route("/simulation", name="simulation")
+     */
+    public function simulation(): Response
+    {
+        return $this->render('front/simulation.html.twig');
+    }
 }

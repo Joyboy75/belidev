@@ -24,10 +24,7 @@ class Ged
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $type;
+    
 
     
     /**
@@ -41,9 +38,18 @@ class Ged
      */
     private $client;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="geds")
+     */
+    private $type;
+
+    
+    
+
     public function __construct()
     {
                 $this->demandes = new ArrayCollection();
+                $this->types = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -63,19 +69,7 @@ class Ged
         return $this;
     }
 
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(?string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    
+        
     /**
      * @return Collection<int, Demande>
      */
@@ -117,4 +111,17 @@ class Ged
 
         return $this;
     }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
 }
