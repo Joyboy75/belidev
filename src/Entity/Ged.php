@@ -43,6 +43,16 @@ class Ged
      */
     private $type;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $notice;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Demande::class, inversedBy="geds")
+     */
+    private $demande;
+
     
     
 
@@ -120,6 +130,30 @@ class Ged
     public function setType(?Type $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getNotice(): ?string
+    {
+        return $this->notice;
+    }
+
+    public function setNotice(string $notice): self
+    {
+        $this->notice = $notice;
+
+        return $this;
+    }
+
+    public function getDemande(): ?Demande
+    {
+        return $this->demande;
+    }
+
+    public function setDemande(?Demande $demande): self
+    {
+        $this->demande = $demande;
 
         return $this;
     }

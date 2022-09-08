@@ -19,11 +19,28 @@ class UserController extends AbstractController
     /**
      * @Route("/user", name="user")
      */
-    public function index(): Response
-    {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
+    // public function index(): Response
+    // {
+    //     return $this->render('user/index.html.twig', [
+    //         'controller_name' => 'UserController',
+    //     ]);
+    // }
+
+    /**
+     * @Route("/user", name="user_show")
+     */
+    public function userShow(
+        
+        UserRepository $userRepository
+    ) {
+
+        $user_connect = $this->getUser();
+
+         $user_mail =  $user_connect->getUserIdentifier();
+
+         $user = $userRepository->findOneBy(['email' => $user_mail]);
+
+        return $this->render("front/user.html.twig", ['user' => $user]);
     }
 
     /**
@@ -60,7 +77,7 @@ class UserController extends AbstractController
 
             $entityManagerInterface->flush();
 
-            $email = (new TemplatedEmail())
+            /* $email = (new TemplatedEmail())
                     ->from('test@test.com')
                     ->to($user_email)
                     ->subject('Inscription')
@@ -72,7 +89,7 @@ class UserController extends AbstractController
  
 
 
-                    $mailerInterface->send($email);
+                    $mailerInterface->send($email); */
 
             return $this->redirectToRoute('car_list');
         }

@@ -40,9 +40,15 @@ class Demande
      */
     private $offre;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Ged::class, mappedBy="demande")
+     */
+    private $geds;
+
     public function __construct()
     {
         $this->offre = new ArrayCollection();
+        $this->geds = new ArrayCollection();
     }
 
 
@@ -113,6 +119,36 @@ class Demande
             // set the owning side to null (unless already changed)
             if ($offre->getDemande() === $this) {
                 $offre->setDemande(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ged>
+     */
+    public function getGeds(): Collection
+    {
+        return $this->geds;
+    }
+
+    public function addGed(Ged $ged): self
+    {
+        if (!$this->geds->contains($ged)) {
+            $this->geds[] = $ged;
+            $ged->setDemande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGed(Ged $ged): self
+    {
+        if ($this->geds->removeElement($ged)) {
+            // set the owning side to null (unless already changed)
+            if ($ged->getDemande() === $this) {
+                $ged->setDemande(null);
             }
         }
 

@@ -1,15 +1,24 @@
 {% extends "front/base.html.twig" %}
 
-<div class="card-body">
-	<div class="card-body style=" height: 70px"">
-		<h1>Mail :
-			{{user.name}}</h1>
-		<h2>Prix :
-			{{user.password}}
-		</h2>
 
-		<br>
+{% block main %}
+	<div class="card-body">
+		<div class="card-body style=" height: 70px"">
+			<h1>email :
+				{{user.email}}</h1>
+			
+			{# <h2>Mot de passe :
+				{{user.password}}
+			</h2> #}
 
-		<a href="{{path('product_list')}}" class="btn btn-primary mt-2">Retourner aux products</a>
+			<br>
+
+			<a href="{{path('create_demande')}}" class="btn btn-primary mt-2">Faire une demande</a>
+
+			<a href="{{path('user_update')}}" class="btn btn-primary mt-2">Modifier profil</a>
+
+			<a href="{{path('accueil')}}" class="btn btn-primary mt-2">Retourner à l'accueil</a>
+		</div>
 	</div>
-</div>
+
+{% endblock %}

@@ -8,54 +8,61 @@
 	</head>
 	<body>
 		<h1>Bonjour
-			{{ emaill }},
-			
-			!
+			{{ emaill }}
+						!
 
 		</h1>
-		<h2>Suite à votre simulation sur notre site voila ce que vous nous avez déclaré que :</h2>
+		<h2>Suite à votre simulation sur notre site voilà ce que vous nous avez déclaré :</h2>
 
-		<p> Vous souhaitez un ou une {{site}},</p>
-
-		
+		<p>
+			Vous souhaitez un ou une site
+			{{site}},</p>
 
 		{%if bdd == "oui" %}
 
-			<p> Vous souhaitez avoir une base de donnée,</p>
+			<p>
+				Vous souhaitez avoir une base de donnée,</p>
 
 		{% else %}
 
-			<p> Vous ne souhaitez pas avoir de base de donnée,</p>
+			<p>
+				Vous ne souhaitez pas avoir de base de donnée,</p>
 
 		{% endif %}
 
 		{%if api == "oui" %}
 
-			<p> Vous souhaitez avoir une api,</p>
+			<p>
+				Vous souhaitez avoir une api,</p>
 
 		{% else %}
 
-			<p> Vous ne souhaitez pas avoir d'api,</p>
+			<p>
+				Vous ne souhaitez pas avoir d'api,</p>
 
 		{% endif %}
 
 		{%if form == "oui" %}
 
-			<p> Vous souhaitez avoir un formulaire de contact,</p>
+			<p>
+				Vous souhaitez avoir un formulaire de contact,</p>
 
 		{% else %}
 
-			<p> Vous ne souhaitez pas avoir de formulaire,</p>
+			<p>
+				Vous ne souhaitez pas avoir de formulaire,</p>
 
 		{% endif %}
 
 		{%if user_management == "oui" %}
 
-			<p> Vous souhaitez avoir une gestion de connexion des utilisateurs.</p>
+			<p>
+				Vous souhaitez avoir une gestion de connexion des utilisateurs.</p>
 
 		{% else %}
 
-			<p> Vous ne souhaitez pas avoir de gestion de connexion des utilisateurs.</p>
+			<p>
+				Vous ne souhaitez pas avoir de gestion de connexion des utilisateurs.</p>
 
 		{% endif %}
 

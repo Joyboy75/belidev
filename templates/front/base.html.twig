@@ -47,7 +47,7 @@
 							{% endif %}
 
 							{% if is_granted('ROLE_USER')  %}
-								<a class="mb-1 me-1 " href="{{path('user_update')}}">Mon compte</a>
+								<a class="mb-1 me-1 " href="{{path('user_show')}}">Mon compte</a>
 
 							{% endif %}
 
@@ -55,18 +55,20 @@
 						{% endif %}
 
 						{# <a href="{{path("show_cart")}}">
-																																																																																											<i class="bi bi-cart2" style="font-size: 2rem; color: cornflowerblue;"></i>
-																																																																																										</a> #}
+																																																																																																													<i class="bi bi-cart2" style="font-size: 2rem; color: cornflowerblue;"></i>
+																																																																																																												</a> #}
 
 						{% if not app.user %}
-							<a class="mb-1 me-1" href="{{path('app_login')}}">Se connecter</a>
-							<a class=" mb-1 me-1" href="{{path('user_insert')}}">S'inscrire</a>
+							<a class="btn btn-primary mb-1 me-1 btn" href="{{path('app_login')}}">Se connecter</a>
+
+							<a class=" btn btn-primary mb-1 me-1 btn" href="{{path('user_insert')}}">S'inscrire</a>
+
 						{% endif %}
 
-						<form class="d-flex">
+						{# <form class="d-flex">
 							<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 							<button class="btn btn-outline-success" type="submit">Search</button>
-						</form>
+						</form> #}
 					</div>
 				</div>
 			</nav>
